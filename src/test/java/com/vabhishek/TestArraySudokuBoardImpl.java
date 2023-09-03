@@ -19,8 +19,9 @@ public class TestArraySudokuBoardImpl {
         for (int i = 0; i < BOARD_SIZE; i++) {
             var value = ((i * BLOCK_SIZE) % BOARD_SIZE) + (i / BLOCK_SIZE); // Get every row starting value
             for (int j = 0; j < BOARD_SIZE; j++) {
-                validArrBoard.set(i, j, (value++ % BOARD_SIZE) + 1);
-                invalidArrBoard.set(i, j, (value++ % BOARD_SIZE) + 1);
+                final var v = value++;
+                validArrBoard.set(i, j, (v % BOARD_SIZE) + 1);
+                invalidArrBoard.set(i, j, (v % BOARD_SIZE) + 1);
             }
         }
         invalidArrBoard.set(0,0, 2);

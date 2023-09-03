@@ -1,6 +1,6 @@
 package com.vabhishek.data;
 
-import com.vabhishek.data.impl.ArraySudokuBoardImpl;
+import com.vabhishek.data.impl.MapSudokuBoardImpl;
 
 public abstract class SudokuBoard {
 
@@ -17,11 +17,11 @@ public abstract class SudokuBoard {
     protected abstract boolean isValidationEnabled();
 
     public static SudokuBoard createEmptyBoard(int blockSize) {
-        return new ArraySudokuBoardImpl(blockSize, true);
+        return new MapSudokuBoardImpl(blockSize, true);
     }
 
     public static SudokuBoard createEmptyBoard(int blockSize, boolean enableValidations) {
-        return new ArraySudokuBoardImpl(blockSize, enableValidations);
+        return new MapSudokuBoardImpl(blockSize, enableValidations);
     }
 
     protected SudokuBoard(final int blockSize) {
